@@ -1,0 +1,32 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./Database.db"
+}
+
+model Content {
+  id Int @id @default(autoincrement())
+  name String @unique
+  definition String
+  premium1 String 
+  premium2 String 
+  premium3 String 
+  premium4 String? @default("")
+  premium5 String? @default("")
+  img String
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  name String 
+  surname String
+  lastname String
+  login String @unique
+  password String
+  role String? @default("user")
+  createAt DateTime @default(now())
+}
