@@ -30,3 +30,18 @@ model User {
   role String? @default("user")
   createAt DateTime @default(now())
 }
+
+model AdminProductData {
+  id Int @id @default(autoincrement())
+  name String @unique
+  minLimit Int
+  maxLimit Int
+  minTime Int
+  maxTime Int
+}
+
+model AdminBidData {
+  id Int @id @default(autoincrement())
+  name String @unique
+  bid Float
+}

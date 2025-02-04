@@ -7,9 +7,10 @@ import { UserService } from './user/user.service'
 import { ContentService } from './content/content.service'
 import { PrismaClient } from '@prisma/client'
 import { PrismaService } from 'prisma/prisma.service'
+import { ProductDataModule } from './product-data/product-data.module';
 
 @Module({
-  imports: [PrismaClient],
+  imports: [PrismaClient, ProductDataModule],
   controllers: [AppController, UserController, ContentController],
   providers: [AppService, UserService, ContentService, PrismaService],
 })
