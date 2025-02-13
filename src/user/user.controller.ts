@@ -30,4 +30,9 @@ export class UserController {
   updadmin(@Body() dto: UserUpdateDTO, @Param('login') login: string) {
     return this.userService.updAdmin(dto, login)
   }
+
+  @Post('/delUser/:login')
+  delUser(@Param('login') login: string) {
+    return this.userService.delUser(login)
+  }
 }

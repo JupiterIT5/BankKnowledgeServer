@@ -31,6 +31,10 @@ export class UserService {
 	getUsers() {
 		return this.prisma.user.findMany()
 	}
+   
+        delUser(login) {
+          return this.prisma.user.delete({where: {login}}) 
+        }
 
 	updAdmin(dto: UserUpdateDTO, login: string) {
 		let userRole;
